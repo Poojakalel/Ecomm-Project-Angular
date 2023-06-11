@@ -1,0 +1,38 @@
+<div class="loginbox">
+    <h4 class="center">User Login</h4>
+    <form #sellerLogin="ngForm" class="common-form log" (ngSubmit)="login(sellerLogin.value)">
+        <input class="form-input" 
+        type="text" name="name" 
+        [(ngModel)]="username" 
+        placeholder="Enter Name"
+        #name="ngModel"
+        required/>
+        
+        <p class="invalid-input"><span *ngIf="name.invalid && name.touched">*Please enter a valid Name</span></p>
+        <input class="form-input"
+         type="password"
+          name="password"
+           [(ngModel)]="userpass" 
+           placeholder="Enter password" 
+           #password="ngModel"
+           required/>
+           <p class="invalid-input"><span *ngIf="password.invalid && password.touched">* please enter a valid Password</span></p>
+        <input class="form-input" 
+        type="text" 
+        name="email" 
+        [(ngModel)]="useremail" 
+        placeholder="Enter Email"
+        #email="ngModel"
+        required
+        />
+        <p class="invalid-input"><span *ngIf="email.invalid && email.touched">Please Enter a valid Email</span></p>
+        <button [disabled]="sellerLogin.invalid" class="form-button btn btn-primary">SignUp</button>
+
+
+    </form> 
+</div>
+
+<!-- 
+<form class="common-form log">
+    <input type="text" placeholder="Enter Name"/>
+</form> -->
